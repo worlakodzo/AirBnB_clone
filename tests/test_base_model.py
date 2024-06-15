@@ -20,6 +20,16 @@ class TestBaseModelDict(unittest.TestCase):
 
         self.assertFalse(b1.id == b2.id)
 
+    def test_save(self):
+        b1 = BaseModel()
+
+        self.assertIsNone(b1.save())
+
+    def test_to_dict(self):
+        b1 = BaseModel()
+
+        self.assertTrue(isinstance(b1.to_dict(), dict))
+
 
 if __name__ == "__main__":
     unittest.main()
