@@ -18,7 +18,7 @@ class TestBaseModelDict(unittest.TestCase):
         b1 = BaseModel()
         b2 = BaseModel()
 
-        self.assertFalse(b1.id == b2.i)
+        self.assertFalse(b1.id == b2.id)
 
 
 if __name__ == "__main__":
