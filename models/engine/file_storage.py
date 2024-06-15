@@ -39,6 +39,7 @@ class FileStorage:
             for identifier, data in self.__objects.items():
                 objects[identifier] = data.to_dict()
             json.dump(objects, file)
+            return True
 
     def reload(self):
         """
@@ -53,6 +54,7 @@ class FileStorage:
                     objects[identifier] = self.convert_date_from_isoformat(data)
 
                 self.__objects = objects
+        return True
 
     def convert_date_from_isoformat(self, dict_data: dict):
         """
