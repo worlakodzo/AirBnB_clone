@@ -7,12 +7,19 @@ class BaseModel:
     A base class models.
     """
 
-    def __init__(self) -> None:
-        self.my_number = 0
-        self.name = None
-        self.id = str(uuid.uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+    def __init__(self, *args, **kwargs) -> None:
+        if kwargs:
+            self.my_number = kwargs["my_number"]
+            self.name = kwargs["name"]
+            self.id = kwargs["id"]
+            self.created_at = datetime.fromisoformat(kwargs["created_at"])
+            self.updated_at = datetime.fromisoformat(kwargs["updated_at"])
+        else:
+            self.my_number = 0
+            self.name = None
+            self.id = str(uuid.uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self) -> str:
         """
@@ -36,5 +43,5 @@ class BaseModel:
             "__class__": self.__class__.__name__,
             "updated_at": self.updated_at.isoformat(),
             "id": self.id,
-            "created_at": self.created_at.isoformat()
+            "created_at": self.created_at.isoformat(),
         }
