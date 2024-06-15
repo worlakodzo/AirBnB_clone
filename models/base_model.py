@@ -34,7 +34,7 @@ class BaseModel:
             "my_number": self.my_number,
             "name": self.name,
             "__class__": self.__class__.__name__,
-            "id": self.id,
-            "created_at": self.created_at.isoformat(),
             "updated_at": self.updated_at.isoformat(),
+            "id": self.id,
+            "created_at": self.created_at.isoformat()
         }
