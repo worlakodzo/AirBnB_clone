@@ -38,7 +38,7 @@ class FileStorage:
             objects = {}
             for identifier, data in self.__objects.items():
                 objects[identifier] = data.to_dict()
-            json.dump(objects, file)
+            json.dump(objects, file, indent=4)
             return True
 
     def reload(self):
