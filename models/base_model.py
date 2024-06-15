@@ -27,6 +27,9 @@ class BaseModel:
         self.updated_at = datetime.now()
 
     def to_dict(self):
+        """
+        Return a dictionary containing all keys/values of the BaseModel.
+        """
         return {
             "my_number": self.my_number,
             "name": self.name,
