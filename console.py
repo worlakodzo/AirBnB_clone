@@ -10,8 +10,13 @@ def console_print():
     """
     print text to the stdout
     """
-
-    print("(hbnb) help\n")
+    print("(hbnb) help\n\n")
+    print("Documented commands (type help <topic>):\n")
+    print("========================================\n")
+    print("EOF  help  quit\n\n")
+    print("(hbnb)\n")
+    print("(hbnb)\n")
+    print("(hbnb) quit\n")
 
 
 if __name__ == "__main__":
